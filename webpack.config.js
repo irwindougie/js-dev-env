@@ -2,16 +2,15 @@ var path = require('path');
 switch (process.env.NODE_ENV) {
     case 'prod':
     case 'production':
-        module.exports = require('./server/config/webpack.prod')({ env: 'production' });
+        module.exports = require('./server/webpack/webpack.prod')({ env: 'production' });
         break;
     case 'test':
     case 'testing':
-        module.exports = require('./config/webpack.test')({ env: 'test' });
+        module.exports = require('./server/webpack/webpack.test')({ env: 'test' });
         break;
     case 'dev':
     case 'development':
     default:
-        module.exports = require('./server/config/webpack.dev')({ env: 'development' });
+        module.exports = require('./server/webpack/webpack.dev')({ env: 'development' });
         break;
 }
-//# sourceMappingURL=webpack.config.js.map
