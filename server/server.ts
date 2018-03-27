@@ -1,11 +1,12 @@
 import app from './config/app';
+import * as chalk from 'chalk';
 
 const server = app.listen(app.get("port"), () => {
 	console.log(
-		"Running at http://%s:%d in %s mode",
-		app.get("host"),
-		app.get("port"),
-		app.get("env")
+		chalk.yellow("Running at %s%d in %s mode"),
+		chalk.cyan("http://" + app.get("host") + ":"),
+		chalk.green(app.get("port")),
+		chalk.underline.bold.red(app.get("env"))
 	);
 })
 export default server;
