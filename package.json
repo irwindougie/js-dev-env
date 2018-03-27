@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "JavaScript development environment Pluralsight course by Cory House",
 	"scripts": {
-		"prestart": "node start.message.js",
 		"start": "npm-run-all --parallel security-check tsc:w open:src",
 		"open:src": "node server/server.js",
 		"security-check": "nsp check",
@@ -14,7 +13,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 
 	},
-	"author": "Cory House",
+	"author": "Doug Irwin",
 	"license": "MIT",
 	"dependencies": {
 		"whatwg-fetch": "1.0.0"
