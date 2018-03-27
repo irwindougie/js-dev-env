@@ -1,6 +1,23 @@
+import { Router, Request, Response, NextFunction } from "express";
 
-module.exports = function(app){
-	app.get('/', function (req, res) {
-		res.sendFile('index.html');
-	})
+export class APIRouter {
+	router: Router;
+
+	constructor() {
+		this.router = Router();
+		this.init();
+	}
+
+	public err(req: Request, res: Response, next: NextFunction){
+		res.send(404);
+	}
+
+	init(){
+		this.router.get('/', this.err);
+	}
 }
+
+const apiRouter = new APIRouter();
+apiRouter.init();
+
+export default apiRouter.router;

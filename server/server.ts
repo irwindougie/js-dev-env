@@ -1,11 +1,11 @@
-var express = require('express');
+import app from './config/app';
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-var app = express();
-var config = require('./config/config.js')[env];
-
-require('./config/express.js')(app, config);
-require('./config/routes.js')(app);
-
-app.listen(config.port);
-console.log('Listening on port: ', config.port)
+const server = app.listen(app.get("port"), () => {
+	console.log(
+		"Running at http://%s:%d in %s mode",
+		app.get("host"),
+		app.get("port"),
+		app.get("env")
+	);
+})
+export default server;
