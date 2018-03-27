@@ -10,7 +10,9 @@
 		"localtunnel": "lt --port 8000",
 		"share": "npm-run-all --parallel open:src localtunnel",
 		"tsc": "tsc",
-		"tsc:w": "tsc -- --watch"
+		"tsc:w": "tsc -- --watch",
+		"test": "echo \"Error: no test specified\" && exit 1"
+
 	},
 	"author": "Cory House",
 	"license": "MIT",
